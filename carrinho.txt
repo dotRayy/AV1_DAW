@@ -1,0 +1,3 @@
+Id;Nome;QTD;Valor
+21;Boticario Cuide-se Bem (Cachos Exuberantes) - Shampoo Cachos 250 Ml;2;22.99
+22;Boticario Cuide-se Bem (Cachos Exuberantes)  - Condicionador 250 Ml;4;23.99
