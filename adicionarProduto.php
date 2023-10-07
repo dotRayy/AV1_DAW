@@ -6,38 +6,27 @@
     <title>Document</title>
 </head>
 <?php 
+
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $busca = $_POST['idProduto'];
+
+        $opcaoProduto = $_POST['opcaoProduto'];
+        $info = explode("|", $opcaoProduto);
+        
+        $idProduto = $info[0];
+        $nomeProduto = $info[1];
         $qtdProduto = $_POST['qtdProduto'];
+        $valorProduto = $info[2];
 
-        $arqProdutos = fopen("produtos.txt", "r") or die("Erro ao abrir arquivo!");
-        $atual = 1;
-                
-        while(!feof($arqProdutos)){
-
-            $linha[] = fgets($arqProdutos);
-            $colunaDados = explode(";", $linha[$atual]);
-            $idProduto = $colunaDados[0];
-            print($idProduto);
-            if($idProduto == $busca){
-                $nomeProduto = $colunaDados[1];
-                $valorProduto = $colunaDados[2];
-                break;
-            }
-            $atual++;
+        if(!file_exists("carrinho.txt")) {
+            $arqCarrinho = fopen("carrinho.txt", "w");
+            fwrite($arqCarrinho, "Id;Nome;QTD;Valor;");
+        } else {
+            $arqCarrinho = fopen("carrinho.txt", "a");
         }
-            fclose($arqProdutos);
 
-            $texto = "\n".$idProduto.";".$nomeProduto.";".$qtdProduto.";".$valorProduto.";";
-
-            if(!file_exists("carrinho.txt")) {
-                $arqCarrinho = fopen("carrinho.txt", "w");
-                $cabecalho = "Id;Nome;QTD;Valor;";
-                fwrite($arqCarrinho, $cabecalho);
-            } else {
-                $arqCarrinho = fopen("carrinho.txt", "a");
-            }
+        $texto = "\n$idProduto;$nomeProduto;$qtdProduto;$valorProduto;";
         fwrite($arqCarrinho, $texto);
+
         fclose($arqCarrinho);
 
         $resposta = "ok";
@@ -51,5 +40,8 @@
             echo "<h2>Falha ao Adicionar Produto!</h2>";
         }
     ?>
+    <br><br>
+    <a href="index.php">Voltar às Compras</a>
+    <a href="listarCarrinho.php">Ver Carrinho</a>
 </body>
 </html>
