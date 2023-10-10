@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
     <style>
-        table, th, tr, td {
+         table, th, tr, td {
             border: solid black 1px;
             border-collapse: collapse;
             text-align: center;
+            padding: 5px;
+            padding-left: 30px;
+            padding-right: 30px;
         }
         th{
             background-color: lightyellow;
+        }
+        table {
+            margin:auto;
         }
     </style>
 </head>

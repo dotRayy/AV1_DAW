@@ -2,17 +2,26 @@
 <html>
     <head>
         <style>
-            table, th, tr, td {
-                border: solid black 1px;
-                border-collapse: collapse;
-                text-align: center;
-            }
-            th{
-                background-color: lightyellow;
-            }
-            .numberOption {
-                width: 50px;
-            }
+             table, th, tr, td {
+            border: solid black 1px;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        th{
+            background-color: lightyellow;
+        }
+        table {
+            margin:auto;
+        }
+        form {
+            margin: auto;
+        }
+        .numberOption {
+            text-align: center;
+        }
         </style>
     </head>
     <body>
@@ -30,7 +39,7 @@
                     $nomeProduto = "";
                     $valorProduto = "";
 
-                    $arqProdutos = fopen("produtos.txt", "r") or die("Erro ao acessar produtos!");
+                    $arqProdutos = fopen("../Produtos/produtos.txt", "r") or die("Erro ao acessar produtos!");
 
                     $atual = 1;
                     $linha[] = fgets($arqProdutos);
@@ -53,13 +62,22 @@
                     }
                     fclose($arqProdutos);
                 ?>
+                <tr style="background-color: lightyellow;">
+                    <td>
+                    <label for="qtdProduto">Quantidade: </label>
+                    </td>
+                    <td colspan="2">
+                    <input type="number" id="qtdProduto" name="qtdProduto" value="0" class="numberOption">
+                    </td>
+                    <td>
+                    <input type="submit" value="Adicionar Produto" style="background-color: white; border-radius: 5px;">
+                    </td>
+                </tr>
             </table>
             <br>
-            <label for="qtdProduto">Quantidade</label>
-            <input type="number" id="qtdProduto" name="qtdProduto" value="0" class="numberOption">
-            <input type="submit" value="Adicionar Produto">
+            
         </form>
         <br>
-        <a href="listarCarrinho.php">Consultar Carrinho</a>
+        <a href="listarCarrinho.php" style="font-size: large;">Consultar Carrinho</a>
     </body>
 </html>
