@@ -39,7 +39,7 @@
                     $nomeProduto = "";
                     $valorProduto = "";
 
-                    $arqProdutos = fopen("../Produtos/produtos.txt", "r") or die("Erro ao acessar produtos!");
+                    $arqProdutos = fopen("Produtos/produtos.txt", "r") or die("Erro ao acessar produtos!");
 
                     $atual = 1;
                     $linha[] = fgets($arqProdutos);
