@@ -1,6 +1,0 @@
-Id;Nome;QTD;Valor;
-21;Boticario Cuide-se Bem (Cachos Exuberantes) - Shampoo Cachos 250 Ml;1;22.99;
-22;Boticario Cuide-se Bem (Cachos Exuberantes)  - Condicionador 250 Ml;1;23.99;
-23;Boticario Cuide-se Bem (Cachos Exuberantes) - Condicionador 250 Ml;1;24.99;
-26;Boticario Cuide-se Bem (Liso Perfeito) - Shampoo Alisador 250 Ml;1;22.99;
-29;Boticario Cuide-se Bem (Restauracao Extraordinaria) - Condicionador 250 Ml;2;24.99;
